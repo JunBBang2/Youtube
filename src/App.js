@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./app.css";
-import VideoList from './components/vidoe_list/video_list';
+import VideoList from "./components/vidoe_list/video_list";
 
 function App() {
   const [videos, setVideos] = useState([]);
@@ -16,10 +16,10 @@ function App() {
     )
       .then((response) => response.json())
       .then((result) => setVideos(result.items))
-      .catch((error) => console.log("error", error));
+      .catch((error) => console.log("error!!", error));
   }, []);
 
-  return <VideoList videos={videos}/>;
+  return <VideoList videos={videos} />;
 }
 
 export default App;
