@@ -11,12 +11,12 @@ function App() {
     };
 
     fetch(
-      "https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResult=25&key=AIzaSyAhLurJjDUB78QLoFNwdH2fCaC76YLjSfA",
+      "https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=AIzaSyAhLurJjDUB78QLoFNwdH2fCaC76YLjSfA",
       requestOptions
     )
       .then((response) => response.json())
       .then((result) => setVideos(result.items))
-      .catch((error) => console.log("error!!", error));
+      .catch((error) => console.log("error", error));
   }, []);
 
   return <VideoList videos={videos} />;
